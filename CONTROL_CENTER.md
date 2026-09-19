@@ -124,7 +124,9 @@ Remote: SYNCED; `origin/main` points to `276af20`
 Push: PASS  
 GitHub Pages: OFFLINE / 404; `gh` CLI unavailable, manual Pages activation required  
 Source safety: PASS; no secrets or student data committed
+GitHub Auth: PARTIAL — Git push credential works; GitHub browser is logged out and unauthenticated Pages API returns HTTP 404  
+Pages Configuration: FAIL / unavailable without authenticated GitHub Settings or API access
 
 ## NEXT ACTION
 
-GitHub update is PASS. Manually enable GitHub Pages from `main` / root because automatic CLI configuration is unavailable, verify the public URL, and continue remaining QA gates. Do not mark FOUNDATION or CONTENT PASS until QA evidence is complete.
+GitHub update is PASS. Manual action required: authenticate to GitHub, enable Pages from `main` / root, then return so verification can continue from Step 7. Do not mark FOUNDATION or CONTENT PASS until QA evidence is complete.

@@ -24,6 +24,7 @@ Evidence rule: A tab is PASS only after implementation, relevant tests and integ
 - Full migration, responsive, offline and release checks remain.
 - GitHub Pages returns 404; `gh` CLI is unavailable, so manual Pages activation is required.
 - Latest verified commit `276af20` is pushed and `origin/main` is synchronized.
+- GitHub Pages API/UI cannot be configured from this environment: `gh` is unavailable, browser is logged out, and unauthenticated Pages API returns HTTP 404.
 - Downstream tabs are intentionally unstarted until QA clears the shared contracts.
 
 ## Verification completed

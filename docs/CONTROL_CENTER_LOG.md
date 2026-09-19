@@ -83,6 +83,15 @@ RESULT: `https://quannguyen210703-glitch.github.io/physics-learning-app/` return
 TIME/ORDER: 2026-09-20 — after local verification  
 ACTION: Push source after tests; user must enable Pages manually on `main` / root, then rerun public URL verification.
 
+## EVENT ID: CC-0013
+
+SOURCE: 00_ORCHESTRATOR_AGENT  
+TASK: DEPLOY-001  
+EVENT: AUTOMATION BLOCKER CONFIRMED  
+RESULT: `gh` CLI is unavailable; GitHub browser session is logged out; unauthenticated `GET /repos/.../pages` returns HTTP 404. Git push authentication is available, but no authenticated Pages configuration channel is available.  
+TIME/ORDER: 2026-09-20 — after API/UI inspection  
+ACTION: Require exactly one manual action: authenticate and enable Pages for `main` / root. Resume verification from deployment wait/public URL; do not rerun the project from scratch.
+
 ## EVENT ID: CC-0012
 
 SOURCE: 00_ORCHESTRATOR_AGENT  

@@ -7,7 +7,7 @@ Completed Tabs: None; FOUNDATION and CONTENT are READY FOR QA but not QA-approve
 Incomplete Tabs: FOUNDATION, EXAM, MASTERY, ADAPTIVE, ANALYTICS, OFFLINE, CONTENT, QA  
 Latest Commit: `276af20` — [FOUNDATION] Complete current V2 foundation checkpoint  
 Push: PASS; `origin/main` synchronized  
-GitHub Pages: OFFLINE / 404; manual activation required because `gh` CLI is unavailable  
+GitHub Pages: OFFLINE / 404; manual activation required because `gh` CLI is unavailable and GitHub auth is not available for Pages API/UI  
 
 ## RELEASE GATE
 
