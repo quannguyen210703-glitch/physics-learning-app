@@ -1,4 +1,4 @@
-import { ENTITY_SCHEMAS } from '../core/schema.js';
+import { ENTITY_SCHEMAS } from '../core/schema.js?v=2026.09.20.001';
 
 const issue = (path, message) => ({ path, message });
 const allowedSources = new Set(['teacher', 'imported', 'generated', 'variant']);

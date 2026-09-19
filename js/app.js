@@ -1,9 +1,9 @@
-import { openDatabase } from './storage/database.js';
-import { ensureLocalStudent } from './storage/student-store.js';
-import { listAttempts } from './storage/attempt-store.js';
-import { loadContent } from './content/question-loader.js';
-import { createRouter } from './router.js';
-import { createDashboard } from './ui/dashboard.js';
+import { openDatabase } from './storage/database.js?v=2026.09.20.001';
+import { ensureLocalStudent } from './storage/student-store.js?v=2026.09.20.001';
+import { listAttempts } from './storage/attempt-store.js?v=2026.09.20.001';
+import { loadContent } from './content/question-loader.js?v=2026.09.20.001';
+import { createRouter } from './router.js?v=2026.09.20.001';
+import { createDashboard } from './ui/dashboard.js?v=2026.09.20.001';
 
 const root = document.querySelector('#app'), status = document.querySelector('#system-status');
 const setStatus = (message, type = '') => { status.textContent = message; status.dataset.status = type; };

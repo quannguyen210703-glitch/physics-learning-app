@@ -1,7 +1,7 @@
-import { put } from '../storage/database.js';
-import { validateExam, validateQuestion, validateQuestionBank } from './content-validator.js';
-import { buildQuestionIndex } from './question-index.js';
-import { generatedQuestions } from './generated-question-bank.js';
+import { put } from '../storage/database.js?v=2026.09.20.001';
+import { validateExam, validateQuestion, validateQuestionBank } from './content-validator.js?v=2026.09.20.001';
+import { buildQuestionIndex } from './question-index.js?v=2026.09.20.001';
+import { generatedQuestions } from './generated-question-bank.js?v=2026.09.20.001';
 
 const fetchJson = async (path) => { const response = await fetch(path, { cache: 'no-store' }); if (!response.ok) throw new Error(`Không thể nạp ${path} (${response.status}).`); return response.json(); };
 
