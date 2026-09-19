@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PHY10-KIN-VEL-001", "subject": "physics", "grade": 10, "chapter": "dong-hoc", "topic": "chuyen-dong-thang", "concept": "van-toc", "skill": "tinh-van-toc", "difficulty": 1, "questionType": "multiple_choice",
+    "question": "Một xe đi được 120 m trong 10 s. Tốc độ trung bình của xe là bao nhiêu?",
+    "options": [{ "id": "A", "text": "12 m/s" }, { "id": "B", "text": "1200 m/s" }, { "id": "C", "text": "0,083 m/s" }, { "id": "D", "text": "110 m/s" }], "correctAnswer": "A",
+    "explanation": "Tốc độ trung bình bằng quãng đường chia cho thời gian.", "solutionSteps": ["Viết v = s/t.", "Thay s = 120 m và t = 10 s.", "Suy ra v = 12 m/s."], "formula": "v = s / t", "commonErrors": ["wrong_formula", "calculation_error"], "prerequisites": ["distance", "time"], "tags": ["velocity", "kinematics"], "sourceType": "teacher", "sourceId": "phase1-sample", "variantOf": null, "similarTo": ["PHY10-KIN-VEL-002"], "verified": true
+  },
+  {
+    "id": "PHY10-KIN-VEL-002", "subject": "physics", "grade": 10, "chapter": "dong-hoc", "topic": "chuyen-dong-thang", "concept": "van-toc", "skill": "tinh-van-toc", "difficulty": 2, "questionType": "multiple_choice",
+    "question": "Một người chạy 1,8 km trong 6 phút. Tốc độ trung bình theo m/s là bao nhiêu?",
+    "options": [{ "id": "A", "text": "0,3 m/s" }, { "id": "B", "text": "5 m/s" }, { "id": "C", "text": "18 m/s" }, { "id": "D", "text": "300 m/s" }], "correctAnswer": "B",
+    "explanation": "1,8 km = 1800 m và 6 phút = 360 s nên v = 1800/360 = 5 m/s.", "solutionSteps": ["Đổi km thành m.", "Đổi phút thành s.", "Tính v = 1800/360 = 5 m/s."], "formula": "v = s / t", "commonErrors": ["unit_conversion", "wrong_substitution"], "prerequisites": ["distance", "time", "unit-conversion"], "tags": ["velocity", "unit-conversion"], "sourceType": "variant", "sourceId": "phase1-sample", "variantOf": "PHY10-KIN-VEL-001", "similarTo": ["PHY10-KIN-VEL-001"], "verified": true
+  },
+  {
+    "id": "PHY10-KIN-ACC-001", "subject": "physics", "grade": 10, "chapter": "dong-hoc", "topic": "chuyen-dong-thang", "concept": "gia-toc", "skill": "tinh-gia-toc", "difficulty": 2, "questionType": "multiple_choice",
+    "question": "Vận tốc của xe tăng từ 4 m/s lên 16 m/s trong 6 s. Gia tốc của xe là bao nhiêu?",
+    "options": [{ "id": "A", "text": "2 m/s²" }, { "id": "B", "text": "2,67 m/s²" }, { "id": "C", "text": "12 m/s²" }, { "id": "D", "text": "20 m/s²" }], "correctAnswer": "A",
+    "explanation": "a = (v - v₀)/t = (16 - 4)/6 = 2 m/s².", "solutionSteps": ["Xác định v₀ và v.", "Tính độ biến thiên vận tốc.", "Chia cho thời gian."], "formula": "a = (v - v₀) / t", "commonErrors": ["wrong_formula", "calculation_error"], "prerequisites": ["velocity", "time"], "tags": ["acceleration", "kinematics"], "sourceType": "teacher", "sourceId": "phase1-sample", "variantOf": null, "similarTo": [], "verified": true
+  },
+  {
+    "id": "PHY10-DYN-NEW-001", "subject": "physics", "grade": 10, "chapter": "dong-luc-hoc", "topic": "dinh-luat-newton", "concept": "luc-va-gia-toc", "skill": "ap-dung-dinh-luat-ii-newton", "difficulty": 2, "questionType": "multiple_choice",
+    "question": "Một lực 12 N tác dụng lên vật khối lượng 3 kg. Bỏ qua ma sát, gia tốc của vật là bao nhiêu?",
+    "options": [{ "id": "A", "text": "4 m/s²" }, { "id": "B", "text": "9 m/s²" }, { "id": "C", "text": "36 m/s²" }, { "id": "D", "text": "0,25 m/s²" }], "correctAnswer": "A",
+    "explanation": "Theo định luật II Newton, a = F/m = 12/3 = 4 m/s².", "solutionSteps": ["Viết a = F/m.", "Thay F = 12 N và m = 3 kg.", "Suy ra a = 4 m/s²."], "formula": "F = m a", "commonErrors": ["wrong_formula", "wrong_substitution"], "prerequisites": ["force", "mass"], "tags": ["newton", "dynamics"], "sourceType": "teacher", "sourceId": "phase1-sample", "variantOf": null, "similarTo": [], "verified": true
+  }
+]

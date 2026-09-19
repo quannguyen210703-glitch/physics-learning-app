@@ -1,0 +1,9 @@
+{
+  "id": "EXAM-PHASE1-DIAGNOSTIC-10",
+  "title": "Khảo sát nền tảng Vật lý",
+  "grade": 10,
+  "mode": "exam",
+  "durationMinutes": 20,
+  "questionIds": ["PHY10-KIN-VEL-001", "PHY10-KIN-VEL-002", "PHY10-KIN-ACC-001", "PHY10-DYN-NEW-001"],
+  "contentVersion": "2026.09.19.01"
+}

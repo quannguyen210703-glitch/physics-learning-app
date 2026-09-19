@@ -1,0 +1,3 @@
+{
+  "errorTypes": ["knowledge_gap", "wrong_formula", "unit_conversion", "calculation_error", "concept_confusion", "graph_interpretation", "sign_error", "wrong_substitution", "incomplete_reasoning", "careless_error"]
+}

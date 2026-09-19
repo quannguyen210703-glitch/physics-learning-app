@@ -1,0 +1,9 @@
+{
+  "appVersion": "2.0.0-phase1",
+  "contentVersion": "2026.09.19.01",
+  "title": "Physics Learning App V2",
+  "description": "Adaptive Physics Learning System",
+  "questionCount": 4,
+  "examCount": 1,
+  "chapters": ["dong-hoc", "dong-luc-hoc", "nang-luong"]
+}

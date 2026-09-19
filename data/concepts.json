@@ -1,0 +1,7 @@
+{
+  "chapters": [
+    { "id": "dong-hoc", "name": "Động học", "topics": [{ "id": "chuyen-dong-thang", "name": "Chuyển động thẳng", "skills": ["tinh-van-toc", "tinh-gia-toc"] }] },
+    { "id": "dong-luc-hoc", "name": "Động lực học", "topics": [{ "id": "dinh-luat-newton", "name": "Định luật Newton", "skills": ["ap-dung-dinh-luat-ii-newton"] }] },
+    { "id": "nang-luong", "name": "Năng lượng", "topics": [{ "id": "bao-toan-nang-luong", "name": "Bảo toàn năng lượng", "skills": ["bao-toan-co-nang"] }] }
+  ]
+}
