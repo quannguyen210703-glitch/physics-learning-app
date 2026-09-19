@@ -64,3 +64,21 @@ EVENT: FOUNDATION COMMIT DETECTED
 RESULT: Workspace HEAD is `6b52570` (`[FOUNDATION] Implement Phase 1 foundation and agent workflow`). The workspace has `origin` configured, but remote verification failed because the Git remote helper is unavailable; no push was performed. The declared project clone remains at `origin/main` commit `1a1e25f`.  
 TIME/ORDER: 2026-09-19 — final repository audit  
 ACTION: Track `6b52570` as the local implementation commit, keep Push as NOT PERFORMED, and require explicit GitHub update workflow before pushing.
+
+## EVENT ID: CC-0010
+
+SOURCE: 00_ORCHESTRATOR_AGENT  
+TASK: QA-001  
+EVENT: LOCAL HTTP AND ROUTER VERIFICATION  
+RESULT: Node tests 4/4 PASS; content validation PASS; JavaScript syntax PASS; dashboard bootstrap, IndexedDB status, Question Bank, search filtering, Architecture router navigation, console and required asset HTTP checks PASS. A missing global sidebar route listener was fixed in `js/app.js`.  
+TIME/ORDER: 2026-09-20 — Stage A local verification  
+ACTION: Commit and push the router fix plus status updates; keep GitHub Pages as a manual activation blocker.
+
+## EVENT ID: CC-0011
+
+SOURCE: 00_ORCHESTRATOR_AGENT  
+TASK: DEPLOY-001  
+EVENT: GITHUB PAGES CHECK  
+RESULT: `https://quannguyen210703-glitch.github.io/physics-learning-app/` returns GitHub Pages 404. `gh` CLI is unavailable, so Pages cannot be configured automatically from this environment.  
+TIME/ORDER: 2026-09-20 — after local verification  
+ACTION: Push source after tests; user must enable Pages manually on `main` / root, then rerun public URL verification.

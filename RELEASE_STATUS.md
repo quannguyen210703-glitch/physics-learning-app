@@ -2,12 +2,12 @@
 
 Release: V2.0.0 (planned)  
 Status: DEVELOPMENT  
-Blocking Bugs: None found in the current automated/content checks.  
+Blocking Bugs: GitHub Pages deployment is not active (public URL returns 404); manual activation required.  
 Completed Tabs: None; FOUNDATION and CONTENT are READY FOR QA but not QA-approved.  
 Incomplete Tabs: FOUNDATION, EXAM, MASTERY, ADAPTIVE, ANALYTICS, OFFLINE, CONTENT, QA  
-Latest Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow (workspace HEAD)  
-Push: NOT PERFORMED; remote verification failed and release docs have uncommitted changes  
-GitHub Pages: NOT VERIFIED  
+Latest Commit: `30f2a79` — [QA] Record Phase 1 verification status (remote baseline)  
+Push: PENDING verified router fix and status update  
+GitHub Pages: OFFLINE / 404; manual activation required because `gh` CLI is unavailable  
 
 ## RELEASE GATE
 

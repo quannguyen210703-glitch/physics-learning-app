@@ -15,6 +15,7 @@ async function bootstrap() {
     const [student, content] = await Promise.all([ensureLocalStudent(), loadContent()]);
     const attempts = await listAttempts(student.studentId);
     const dashboard = createDashboard(root, content, attempts), router = createRouter((route) => dashboard.render(route));
+    document.querySelectorAll('[data-route]').forEach((button) => button.addEventListener('click', () => router.navigate(button.dataset.route)));
     dashboard.render(router.current());
     setStatus(`Đã sẵn sàng · ${content.questions.length} câu hỏi · local data được bảo toàn`, 'success');
   } catch (error) {

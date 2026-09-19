@@ -3,7 +3,7 @@
 Overall status: IN PROGRESS  
 Overall progress: 18% feature completion (0/8 tabs PASS)  
 Active tab: QA  
-Active agent: QA_AGENT (handoff pending)  
+Active agent: 08_QA_AGENT  
 Active task: QA-001 — Phase 1 integration and release verification  
 Evidence rule: A tab is PASS only after implementation, relevant tests and integration checks pass.
 
@@ -20,9 +20,9 @@ Evidence rule: A tab is PASS only after implementation, relevant tests and integ
 
 ## Current blockers
 
-- npm is not available on PATH; equivalent bundled Node executable was used successfully.
-- QA_AGENT workstream has not returned a readable handoff report.
-- Full migration, responsive, offline, GitHub Pages and release security checks remain.
+- npm/Python are not available as usable commands on PATH; bundled Node was used successfully and Node static server served the app.
+- Full migration, responsive, offline and release checks remain.
+- GitHub Pages returns 404; `gh` CLI is unavailable, so manual Pages activation is required.
 - Downstream tabs are intentionally unstarted until QA clears the shared contracts.
 
 ## Verification completed
@@ -31,6 +31,9 @@ Evidence rule: A tab is PASS only after implementation, relevant tests and integ
 - Bundled Node `tools/validate-content.mjs`: valid — 4 questions, 4 exam references.
 - JS syntax check: PASS.
 - Browser smoke: dashboard, Question bank navigation, search filtering and console error check PASS.
+- Sidebar Architecture router navigation: PASS after fixing the missing global route listeners.
+- HTTP assets: index, CSS, JS, JSON, manifest and architecture routes all returned 200.
+- Security scan: no `.env`, secret, token, password, private key or student data matches.
 
 ## Source and ownership
 

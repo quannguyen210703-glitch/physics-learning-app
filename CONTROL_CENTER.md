@@ -4,22 +4,22 @@
 ## PROJECT STATUS
 
 Overall Status: IN PROGRESS  
-Overall Progress: 0% (0/8 feature tabs PASS; control-plane documentation excluded)  
+Overall Progress: 18% weighted implementation progress (0/8 feature tabs PASS)  
 Current Active Tab: QA  
 Current Active Agent: 08_QA_AGENT  
 Current Active Task: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
-Last Update: 2026-09-19 — CONTENT-001 validation fix verified; QA handoff ready
+Last Update: 2026-09-20 — local browser, asset, router and security checks verified
 
-Progress formula: `PASS feature tabs / 8`. A tab is counted as PASS only after implementation evidence, test evidence, and QA evidence where required. Documentation-only progress is recorded in the tab but does not count as feature completion.
+Progress formula: weighted task progress from TASK_BOARD.md; PASS remains a separate gate requiring implementation, tests and QA. Documentation-only progress does not count as feature completion.
 
 ## CURRENT FOCUS
 
 ACTIVE TAB: QA  
 ACTIVE AGENT: 08_QA_AGENT  
 ACTIVE TASK: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
-STATUS: READY FOR QA  
-PROGRESS: 0% QA execution; foundation/content unit and validation checks are green  
-BLOCKERS: Full browser, offline, responsive, security, and deployment checks have not run.
+STATUS: IN PROGRESS  
+PROGRESS: 35% QA execution; Node tests, syntax, content, browser smoke, router and asset checks are green  
+BLOCKERS: Full migration, responsive, offline and GitHub Pages checks remain; Pages currently returns 404 and requires manual activation.
 
 ## TAB STATUS
 
@@ -27,18 +27,18 @@ BLOCKERS: Full browser, offline, responsive, security, and deployment checks hav
 
 Agent: 01_FOUNDATION_AGENT  
 Status: READY FOR QA  
-Progress: 80% (4/5 foundation deliverables verified)  
-Current Task: FOUNDATION-001 — Complete integration after CONTENT-001 is fixed  
-Completed Tasks: Shared schema, IndexedDB stores, bootstrap/router/UI, architecture and ownership docs are present; JavaScript syntax check passed.  
-Blocked Tasks: Browser/runtime integration, IndexedDB migration checks, and QA.  
-Last Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow  
-QA: READY FOR QA; automated unit/content checks PASS
+Progress: 90% (implementation and targeted smoke evidence present; full QA pending)  
+Current Task: FOUNDATION-001 — Complete migration and responsive QA  
+Completed Tasks: Shared schema, IndexedDB stores, bootstrap/router/UI, architecture and ownership docs are present; JS syntax, Node tests, browser smoke, router and console checks passed.  
+Blocked Tasks: IndexedDB migration, responsive, offline, security, deployment, and full QA.  
+Last Commit: `dbe07b9` — [FOUNDATION] Implement Phase 1 foundation and agent workflow  
+QA: IN PROGRESS; targeted smoke PASS, full QA pending
 
 ### TAB 02 — EXAM
 
 Agent: 02_EXAM_AGENT  
-Status: NOT STARTED  
-Progress: 0%  
+Status: IN PROGRESS  
+Progress: 35%  
 Current Task: EXAM-001 — Exam session, answer flow, timer, autosave, scoring, and attempts  
 Completed Tasks: Scope documented.  
 Blocked Tasks: Waiting for FOUNDATION contracts.  
@@ -106,8 +106,8 @@ Agent: 08_QA_AGENT
 Status: NOT STARTED  
 Progress: 0%  
 Current Task: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
-Completed Tasks: QA gates documented.  
-Blocked Tasks: Full QA execution is pending; foundation/content baseline is testable.  
+Completed Tasks: Node tests, syntax, content validation, browser smoke, router, asset and security checks executed.  
+Blocked Tasks: Migration, responsive, offline, GitHub Pages and full release checks.  
 Last Commit: NONE  
 QA: NOT RUN
 
@@ -119,13 +119,12 @@ The project is COMPLETE only when FOUNDATION, EXAM, MASTERY, ADAPTIVE, ANALYTICS
 
 Repository: physics-learning-app  
 Branch: main  
-Last Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow (workspace HEAD)  
-Remote: CONFIGURED but not verified; remote helper failed during read  
-Declared project clone: `origin/main` at `1a1e25f`  
-Push: NOT PERFORMED; control-plane documents have uncommitted changes  
-GitHub Pages: NOT VERIFIED  
-Control-plane workspace commit: NOT COMMITTED; no remote is configured in this workspace
+Last Commit: `30f2a79` — [QA] Record Phase 1 verification status (current remote baseline)  
+Remote: SYNCED before the pending router fix  
+Push: PENDING router fix and status update  
+GitHub Pages: OFFLINE / 404; `gh` CLI unavailable, manual Pages activation required  
+Source safety: PASS; no secrets or student data committed
 
 ## NEXT ACTION
 
-08_QA_AGENT should run the full integration, browser/runtime, offline, responsive, security, and deployment checks. Do not mark FOUNDATION or CONTENT PASS until QA evidence is recorded. Downstream agents remain paused until their declared dependencies are ready.
+Commit and push the verified router fix and status update. Then manually enable GitHub Pages from `main` / root because automatic CLI configuration is unavailable, verify the public URL, and continue remaining QA gates. Do not mark FOUNDATION or CONTENT PASS until QA evidence is complete.
