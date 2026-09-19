@@ -12,3 +12,11 @@ GitHub Pages: OFFLINE / 404; manual activation required because `gh` CLI is unav
 ## RELEASE GATE
 
 Release is not ready until all eight tabs are PASS, QA has completed integration checks, no blocking bugs remain, and the final branch/push/deployment status has been verified.
+
+## Latest deployment checkpoint — 2026-09-20
+
+- Content expansion: PASS — 100 valid production questions.
+- Runtime and browser smoke: PASS — dynamic dashboard count, search, filters and pagination.
+- Offline/cache: PASS — versioned service worker policy implemented; student stores preserved.
+- GitHub Pages: configured from `main` / root and publicly online at `https://quannguyen210703-glitch.github.io/physics-learning-app/`.
+- Content version: `2026.09.20.001`.

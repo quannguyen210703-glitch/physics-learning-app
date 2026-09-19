@@ -1,1 +1,1 @@
-{"name":"physics-learning-app","private":true,"version":"2.0.0-phase1","type":"module","scripts":{"test":"node --test tools/tests/*.test.mjs","validate:content":"node tools/validate-content.mjs"}}
+{"name":"physics-learning-app","private":true,"version":"2.0.0-phase1","type":"module","scripts":{"test":"node --test tools/tests/*.test.mjs","validate:content":"node tools/validate-content.mjs","benchmark":"node tools/benchmark-content.mjs"}}

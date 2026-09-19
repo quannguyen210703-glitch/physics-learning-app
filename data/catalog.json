@@ -1,9 +1,16 @@
 {
   "appVersion": "2.0.0-phase1",
-  "contentVersion": "2026.09.19.01",
+  "contentVersion": "2026.09.20.001",
   "title": "Physics Learning App V2",
   "description": "Adaptive Physics Learning System",
-  "questionCount": 4,
+  "questionCount": 100,
+  "verifiedQuestionCount": 100,
+  "reviewRequiredCount": 0,
   "examCount": 1,
-  "chapters": ["dong-hoc", "dong-luc-hoc", "nang-luong"]
+  "chapters": ["dong-hoc", "dong-luc-hoc", "nang-luong"],
+  "topics": ["chuyen-dong-thang", "dinh-luat-newton", "bao-toan-co-nang"],
+  "concepts": ["van-toc", "gia-toc", "luc-va-gia-toc", "co-nang"],
+  "skills": ["tinh-van-toc", "tinh-gia-toc", "ap-dung-dinh-luat-ii-newton", "bao-toan-co-nang"],
+  "difficultyDistribution": { "1": 25, "2": 27, "3": 24, "4": 24, "5": 0 },
+  "lastUpdated": "2026-09-20.001"
 }

@@ -130,3 +130,19 @@ Pages Configuration: FAIL / unavailable without authenticated GitHub Settings or
 ## NEXT ACTION
 
 GitHub update is PASS. Manual action required: authenticate to GitHub, enable Pages from `main` / root, then return so verification can continue from Step 7. Do not mark FOUNDATION or CONTENT PASS until QA evidence is complete.
+
+## CURRENT CHECKPOINT — CONTENT-EXPANSION / STABILITY HARDENING
+
+Updated: 2026-09-20 after authenticated GitHub Pages deployment.
+
+- Production Question Bank: 100 valid questions (4 seed + 96 generated); no duplicate IDs or duplicate option sets.
+- Metadata: schema fields, source provenance, numeric answer verification, difficulty, prerequisites, common errors, tags and relations are present.
+- Runtime: indexed lookup by id/chapter/topic/concept/skill/difficulty/tag, token search, filters and 20-item pagination.
+- Resilience: invalid questions can be excluded from runtime; bootstrap has explicit loading, error and retry states.
+- Offline: versioned service worker cache with network-first content updates and old-cache cleanup; IndexedDB student stores are untouched.
+- Version: contentVersion `2026.09.20.001`; appVersion remains `2.0.0-phase1`.
+- Validation: `node tools/validate-content.mjs` PASS (100 questions); `node --test tools/tests/*.test.mjs` PASS (6/6).
+- Performance: production 100 build 4.47 ms / 100 queries 1.36 ms; synthetic 500 build 11.41 ms / 100 queries 5.87 ms; synthetic 1000 build 17.46 ms / 100 queries 10.78 ms.
+- Browser smoke: local bootstrap, dynamic count, Question Bank route and search filter PASS.
+
+The historical deployment blocker below is superseded: GitHub Pages is now configured from `main` / root and the public URL is online.

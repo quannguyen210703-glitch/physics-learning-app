@@ -19,3 +19,20 @@ The board is evidence-based. `PASS` requires implementation evidence, test evide
 - A failed task stays with its owner; the owner receives the required fix.
 - A blocked task is paused and its dependency is activated first.
 - Progress is derived from task evidence, not chat claims or subjective estimates.
+
+## CONTENT-EXPANSION CHECKPOINT — 2026-09-20
+
+| Task ID | Result | Evidence |
+|---|---|---|
+| CONTENT-001 | PASS | Seed audit: 4 questions, all valid |
+| CONTENT-002 | PASS | Shared schema and numeric metadata validation |
+| CONTENT-003 | PASS | Runtime production bank expanded to 100 questions |
+| CONTENT-004 | PASS | Validator: 100 valid, no duplicate IDs, numeric answer checks |
+| CONTENT-005 | PASS | Duplicate ID/text/option-set detection; 0 production duplicates |
+| CONTENT-006 | PASS | Indexed lookup and token search index |
+| FOUNDATION-UI-001 | PASS | Dynamic count, filters, pagination, loading/error/retry |
+| OFFLINE-001 | PASS | Versioned service worker cache and content update policy |
+| QA-002 | PASS | 6/6 Node tests, content validation, local browser smoke |
+| QA-003 | PASS | 500/1000 synthetic benchmark within acceptable runtime |
+
+Next gate: commit/push this checkpoint and verify the public GitHub Pages deployment.

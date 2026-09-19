@@ -1,4 +1,4 @@
-import { openDatabase, count } from './storage/database.js';
+import { openDatabase } from './storage/database.js';
 import { ensureLocalStudent } from './storage/student-store.js';
 import { listAttempts } from './storage/attempt-store.js';
 import { loadContent } from './content/question-loader.js';
@@ -10,7 +10,8 @@ const setStatus = (message, type = '') => { status.textContent = message; status
 
 async function bootstrap() {
   try {
-    setStatus('Đang khởi tạo dữ liệu…');
+    setStatus('Đang chuẩn bị ngân hàng câu hỏi…');
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js').catch((error) => console.warn('Service worker unavailable', error));
     await openDatabase();
     const [student, content] = await Promise.all([ensureLocalStudent(), loadContent()]);
     const attempts = await listAttempts(student.studentId);
@@ -20,8 +21,9 @@ async function bootstrap() {
     setStatus(`Đã sẵn sàng · ${content.questions.length} câu hỏi · local data được bảo toàn`, 'success');
   } catch (error) {
     console.error(error);
-    setStatus(error.message, 'error');
-    root.innerHTML = `<section class="error"><b>!</b><h1>Không thể khởi tạo app</h1><p>${error.message}</p><button class="primary" onclick="location.reload()">Thử lại</button></section>`;
+    setStatus('Không thể tải dữ liệu câu hỏi.', 'error');
+    root.innerHTML = `<section class="error"><b>!</b><h1>Không thể khởi tạo app</h1><p>${error.message}</p><button class="primary" data-retry>Thử lại</button></section>`;
+    root.querySelector('[data-retry]').addEventListener('click', () => location.reload());
   }
 }
 bootstrap();

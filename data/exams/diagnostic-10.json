@@ -5,5 +5,5 @@
   "mode": "exam",
   "durationMinutes": 20,
   "questionIds": ["PHY10-KIN-VEL-001", "PHY10-KIN-VEL-002", "PHY10-KIN-ACC-001", "PHY10-DYN-NEW-001"],
-  "contentVersion": "2026.09.19.01"
+  "contentVersion": "2026.09.20.001"
 }

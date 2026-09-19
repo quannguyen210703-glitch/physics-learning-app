@@ -41,3 +41,7 @@ Evidence rule: A tab is PASS only after implementation, relevant tests and integ
 
 See `docs/AGENT_OWNERSHIP.md`, `docs/agents/`, `docs/status/`, `CONTROL_CENTER.md`, `TASK_BOARD.md` and `RELEASE_STATUS.md`.
 
+## Latest verified milestone — 2026-09-20
+
+The Question Bank expansion and stability hardening milestone is implemented. Runtime content is 100 valid questions, catalog counts are derived from loaded content, the UI uses index-backed search/filter/pagination, and the service worker uses `contentVersion`-keyed caches. Student IndexedDB stores are not cleared or replaced. See `CONTROL_CENTER.md` for the evidence report and benchmark numbers.
+
