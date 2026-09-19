@@ -4,13 +4,13 @@ The board is evidence-based. `PASS` requires implementation evidence, test evide
 
 | Task ID | Tab | Agent | Status | Progress | QA | Commit | Blocker |
 |---|---|---|---|---:|---|---|---|
-| FOUNDATION-001 | FOUNDATION | 01_FOUNDATION_AGENT | IN PROGRESS | 60% | BLOCKED | - | CONTENT-001 |
+| FOUNDATION-001 | FOUNDATION | 01_FOUNDATION_AGENT | READY FOR QA | 80% | NOT RUN | 6b52570 | NONE |
 | EXAM-001 | EXAM | 02_EXAM_AGENT | NOT STARTED | 0% | - | - | FOUNDATION-001 |
 | MASTERY-001 | MASTERY | 03_MASTERY_AGENT | NOT STARTED | 0% | - | - | FOUNDATION-001 |
 | ADAPTIVE-001 | ADAPTIVE | 04_ADAPTIVE_AGENT | NOT STARTED | 0% | - | - | MASTERY-001, CONTENT-001 |
 | ANALYTICS-001 | ANALYTICS | 05_ANALYTICS_AGENT | NOT STARTED | 0% | - | - | EXAM-001, MASTERY-001 |
 | OFFLINE-001 | OFFLINE | 06_OFFLINE_AGENT | NOT STARTED | 0% | - | - | FOUNDATION-001 |
-| CONTENT-001 | CONTENT | 07_CONTENT_AGENT | FAIL | 80% | FAIL | - | `variantOf: null` rejected by validator |
+| CONTENT-001 | CONTENT | 07_CONTENT_AGENT | READY FOR QA | 80% | NOT RUN | 6b52570 | Importer not present |
 | QA-001 | QA | 08_QA_AGENT | NOT STARTED | 0% | - | - | All feature tasks |
 
 ## BOARD RULES

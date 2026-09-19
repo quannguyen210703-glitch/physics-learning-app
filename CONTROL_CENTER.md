@@ -5,34 +5,34 @@
 
 Overall Status: IN PROGRESS  
 Overall Progress: 0% (0/8 feature tabs PASS; control-plane documentation excluded)  
-Current Active Tab: CONTENT  
-Current Active Agent: 07_CONTENT_AGENT  
-Current Active Task: CONTENT-001 — Repair content validation and add regression coverage  
-Last Update: 2026-09-19 — content smoke test found a blocking validator failure
+Current Active Tab: QA  
+Current Active Agent: 08_QA_AGENT  
+Current Active Task: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
+Last Update: 2026-09-19 — CONTENT-001 validation fix verified; QA handoff ready
 
 Progress formula: `PASS feature tabs / 8`. A tab is counted as PASS only after implementation evidence, test evidence, and QA evidence where required. Documentation-only progress is recorded in the tab but does not count as feature completion.
 
 ## CURRENT FOCUS
 
-ACTIVE TAB: CONTENT  
-ACTIVE AGENT: 07_CONTENT_AGENT  
-ACTIVE TASK: CONTENT-001 — Repair content validation and add regression coverage  
-STATUS: FAIL  
-PROGRESS: 80% (question bank, exam bank, duplicate checks, and validator are present; smoke test fails)  
-BLOCKERS: `validateQuestionBank()` rejects valid base questions with `variantOf: null`, preventing app bootstrap.
+ACTIVE TAB: QA  
+ACTIVE AGENT: 08_QA_AGENT  
+ACTIVE TASK: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
+STATUS: READY FOR QA  
+PROGRESS: 0% QA execution; foundation/content unit and validation checks are green  
+BLOCKERS: Full browser, offline, responsive, security, and deployment checks have not run.
 
 ## TAB STATUS
 
 ### TAB 01 — FOUNDATION
 
 Agent: 01_FOUNDATION_AGENT  
-Status: IN PROGRESS  
-Progress: 60% (3/5 foundation deliverables verified)  
+Status: READY FOR QA  
+Progress: 80% (4/5 foundation deliverables verified)  
 Current Task: FOUNDATION-001 — Complete integration after CONTENT-001 is fixed  
 Completed Tasks: Shared schema, IndexedDB stores, bootstrap/router/UI, architecture and ownership docs are present; JavaScript syntax check passed.  
-Blocked Tasks: Content integration smoke test, automated regression tests, and QA.  
-Last Commit: NOT COMMITTED in control-plane workspace  
-QA: NOT RUN; blocked by CONTENT-001
+Blocked Tasks: Browser/runtime integration, IndexedDB migration checks, and QA.  
+Last Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow  
+QA: READY FOR QA; automated unit/content checks PASS
 
 ### TAB 02 — EXAM
 
@@ -92,13 +92,13 @@ QA: NOT RUN
 ### TAB 07 — CONTENT
 
 Agent: 07_CONTENT_AGENT  
-Status: FAIL  
+Status: READY FOR QA  
 Progress: 80% (4/5 scoped content deliverables present)  
 Current Task: CONTENT-001 — Repair nullable `variantOf` validation and add regression coverage  
-Completed Tasks: Question bank, exam bank, duplicate/reference validation, and loader are present.  
-Blocked Tasks: App bootstrap and QA until valid base questions pass validation; importer is not present.  
-Last Commit: NOT COMMITTED in control-plane workspace  
-QA: FAIL — content smoke test
+Completed Tasks: Question bank, exam bank, duplicate/reference validation, loader, and regression coverage are present; content validation PASS.  
+Blocked Tasks: Importer is not present; full QA remains pending.  
+Last Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow  
+QA: READY FOR QA; content smoke test PASS
 
 ### TAB 08 — QA
 
@@ -107,7 +107,7 @@ Status: NOT STARTED
 Progress: 0%  
 Current Task: QA-001 — Full integration, migration, responsive, offline, security, and deployment verification  
 Completed Tasks: QA gates documented.  
-Blocked Tasks: No testable implementation output is available.  
+Blocked Tasks: Full QA execution is pending; foundation/content baseline is testable.  
 Last Commit: NONE  
 QA: NOT RUN
 
@@ -119,11 +119,13 @@ The project is COMPLETE only when FOUNDATION, EXAM, MASTERY, ADAPTIVE, ANALYTICS
 
 Repository: physics-learning-app  
 Branch: main  
-Last Commit: `1a1e25f` — Initial commit (verified at the declared project path)  
-Remote: SYNCED with `origin/main` at audit time  
+Last Commit: `6b52570` — [FOUNDATION] Implement Phase 1 foundation and agent workflow (workspace HEAD)  
+Remote: CONFIGURED but not verified; remote helper failed during read  
+Declared project clone: `origin/main` at `1a1e25f`  
+Push: NOT PERFORMED; control-plane documents have uncommitted changes  
 GitHub Pages: NOT VERIFIED  
 Control-plane workspace commit: NOT COMMITTED; no remote is configured in this workspace
 
 ## NEXT ACTION
 
-07_CONTENT_AGENT must fix CONTENT-001, preserve nullable-field semantics in the shared contract, and add a regression test. Then rerun content smoke validation, return FOUNDATION-001 to READY FOR QA, and activate 08_QA_AGENT. Downstream agents remain paused until their declared dependencies are ready.
+08_QA_AGENT should run the full integration, browser/runtime, offline, responsive, security, and deployment checks. Do not mark FOUNDATION or CONTENT PASS until QA evidence is recorded. Downstream agents remain paused until their declared dependencies are ready.
