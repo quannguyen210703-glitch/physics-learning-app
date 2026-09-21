@@ -162,3 +162,5 @@ Evidence: `docs/status/boot.md`.
 - Automated checks: 10 tests PASS; content validation 100/100 PASS; syntax checks PASS.
 
 Gate decision: BOOT-001 PASS. Do not advance other feature gates until their own evidence is complete.
+
+Production verification after `b1ca327`: GitHub Pages root boot PASS with IndexedDB v2; direct `#/question-bank` route PASS with 100 questions and pagination. No loading hang observed.

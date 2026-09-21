@@ -34,8 +34,8 @@ STATUS: PASS (local quality-gate evidence complete)
 - `node --test tools/tests/*.test.mjs`: 10 passed, 0 failed.
 - `node tools/validate-content.mjs`: 100 questions valid, 4 exam references valid.
 - JavaScript syntax checks: PASS.
+- Production GitHub Pages after commit `b1ca327`: root boot PASS with IndexedDB v2; direct `#/question-bank` route PASS with 100 questions and pagination.
 
 ## Gate decision
 
 BOOT-001 is PASS. Foundation, Content, Exam, Scoring, Mastery, Roadmap, Adaptive, Analytics and final release gates remain unchanged and must be evaluated separately with evidence.
-
