@@ -1,10 +1,9 @@
 # QA
 
 STATUS: IN PROGRESS  
-PROGRESS: 35%  
-DONE: Node tests, syntax, content validation, browser smoke, router, asset and security checks executed.  
-REMAINING: IndexedDB migration, responsive, offline, GitHub Pages and full release checks.  
-TESTS: Node 4/4 PASS; content validation PASS; browser console has no errors; release suite NOT RUN.  
-ISSUES: GitHub Pages returns 404 and requires manual activation; cannot mark release PASS before full integration checks.  
-LAST COMMIT: NONE
-
+QUALITY GATES: BOOT-001 PASS; FOUNDATION, CONTENT and final release gates remain open.  
+DONE: Startup watchdog, error boundary, retry, base-path handling, IndexedDB migration, stale service-worker update and offline reload evidence completed.  
+REMAINING: Foundation QA, Content coverage report, responsive checks, Exam Engine, Scoring, Mastery, Roadmap, Adaptive, Analytics and full production release checks.  
+TESTS: Node 10/10 PASS; content validation 100/100 PASS; browser startup matrix PASS; release suite NOT RUN.  
+ISSUES: The deployed GitHub Pages site still needs this BOOT-001 change pushed and production smoke-tested.  
+LAST COMMIT: local BOOT-001 implementation pending authenticated remote push.  

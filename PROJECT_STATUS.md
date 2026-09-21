@@ -1,11 +1,13 @@
 # Physics Learning App V2 — Project Status
 
 Overall status: IN PROGRESS  
-Overall progress: 18% feature completion (0/8 tabs PASS)  
+Quality-gate status: BOOT-001 PASS; FOUNDATION READY FOR QA; CONTENT READY FOR QA; remaining feature gates NOT STARTED  
 Active tab: QA  
 Active agent: 08_QA_AGENT  
 Active task: QA-001 — Phase 1 integration and release verification  
 Evidence rule: A tab is PASS only after implementation, relevant tests and integration checks pass.
+
+BOOT-001 evidence: `docs/status/boot.md` — startup watchdog, error boundary, retry, IndexedDB v1→v2 migration, stale service-worker update and offline reload checks PASS.
 
 | Tab | Status | Progress | Evidence | Dependencies | QA |
 |---|---|---:|---|---|---|
@@ -44,4 +46,3 @@ See `docs/AGENT_OWNERSHIP.md`, `docs/agents/`, `docs/status/`, `CONTROL_CENTER.m
 ## Latest verified milestone — 2026-09-20
 
 The Question Bank expansion and stability hardening milestone is implemented. Runtime content is 100 valid questions, catalog counts are derived from loaded content, the UI uses index-backed search/filter/pagination, and the service worker uses `contentVersion`-keyed caches. Student IndexedDB stores are not cleared or replaced. See `CONTROL_CENTER.md` for the evidence report and benchmark numbers.
-

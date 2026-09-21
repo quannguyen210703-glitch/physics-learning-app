@@ -19,4 +19,4 @@ npm test
 npm run validate:content
 ```
 
-Phase 1 có shared schemas, IndexedDB v1, local student store, question bank metadata, content validator, router và dashboard nền tảng. Exam, Mastery, Adaptive, Analytics và Offline sẽ được giao cho các agent tương ứng ở phase tiếp theo.
+Phase 1 có shared schemas, IndexedDB v2 với migration bảo toàn dữ liệu, local student store, question bank metadata, content validator, router và dashboard nền tảng. BOOT-001 đã PASS với watchdog startup, error boundary, retry, stale-cache recovery và offline reload evidence. Exam, Mastery, Adaptive và Analytics sẽ được giao sau khi Foundation/Content QA hoàn tất.

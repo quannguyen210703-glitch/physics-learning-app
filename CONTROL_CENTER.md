@@ -146,3 +146,19 @@ Updated: 2026-09-20 after authenticated GitHub Pages deployment.
 - Browser smoke: local bootstrap, dynamic count, Question Bank route and search filter PASS.
 
 The historical deployment blocker below is superseded: GitHub Pages is now configured from `main` / root and the public URL is online.
+
+## BOOT-001 QUALITY GATE — 2026-09-21
+
+Status: PASS
+
+Evidence: `docs/status/boot.md`.
+
+- Startup watchdog: global 15 seconds; content request timeout: 8 seconds.
+- Error boundary: readable phase, error code, attempt, base URL and timestamp diagnostics.
+- Retry: transient content failure recovered successfully after retry.
+- IndexedDB: version 1 fixture migrated to version 2 without clearing student stores.
+- Service worker: old worker replaced, versioned app shell installed, stale caches cleaned and offline reload booted.
+- Browser matrix: first visit, refresh, hard refresh, direct route, empty/existing IndexedDB, old schema, old worker, offline reload and app update PASS.
+- Automated checks: 10 tests PASS; content validation 100/100 PASS; syntax checks PASS.
+
+Gate decision: BOOT-001 PASS. Do not advance other feature gates until their own evidence is complete.

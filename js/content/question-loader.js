@@ -1,9 +1,24 @@
-import { put } from '../storage/database.js?v=2026.09.20.001';
-import { validateExam, validateQuestion, validateQuestionBank } from './content-validator.js?v=2026.09.20.001';
-import { buildQuestionIndex } from './question-index.js?v=2026.09.20.001';
-import { generatedQuestions } from './generated-question-bank.js?v=2026.09.20.001';
+import { put } from '../storage/database.js?v=2026.09.21.001';
+import { validateExam, validateQuestion, validateQuestionBank } from './content-validator.js?v=2026.09.21.001';
+import { buildQuestionIndex } from './question-index.js?v=2026.09.21.001';
+import { generatedQuestions } from './generated-question-bank.js?v=2026.09.21.001';
 
-const fetchJson = async (path) => { const response = await fetch(path, { cache: 'no-store' }); if (!response.ok) throw new Error(`Không thể nạp ${path} (${response.status}).`); return response.json(); };
+export const CONTENT_LOAD_TIMEOUT_MS = 8000;
+const appBaseUrl = new URL('../../', import.meta.url);
+
+export const fetchJson = async (path, timeoutMs = CONTENT_LOAD_TIMEOUT_MS) => {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const url = new URL(path.replace(/^\.\//, ''), appBaseUrl).href;
+  try {
+    const response = await fetch(url, { cache: 'no-store', signal: controller.signal });
+    if (!response.ok) throw new Error(`Không thể nạp ${path} (${response.status}).`);
+    return response.json();
+  } catch (error) {
+    if (error.name === 'AbortError') { const timeoutError = new Error(`Nạp ${path} quá thời gian sau ${timeoutMs} ms.`); timeoutError.code = 'CONTENT_TIMEOUT'; throw timeoutError; }
+    throw error;
+  } finally { clearTimeout(timer); }
+};
 
 export async function loadContent() {
   const [catalog, concepts, errorTypes, version, seedQuestions, exam] = await Promise.all([
@@ -20,4 +35,3 @@ export async function loadContent() {
   await put('contentMeta', { key: 'version', ...version, questionCount: validQuestions.length, syncedAt: new Date().toISOString() });
   return { catalog: derivedCatalog, concepts, errorTypes, version, questions: validQuestions, exams: [exam], index: buildQuestionIndex(validQuestions), validation: { ...questionReport, invalidQuestions: questions.length - validQuestions.length, reviewRequired: validQuestions.filter((question) => !question.verified).length } };
 }
-

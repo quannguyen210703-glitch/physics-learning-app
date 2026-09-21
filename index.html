@@ -3,7 +3,43 @@
   <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Physics Learning App V2 — Adaptive Physics Learning System"><title>Physics Learning App V2</title>
-    <link rel="stylesheet" href="./css/main.css"><style>.filters select{padding:11px 10px;border:1px solid #e1e6df;border-radius:9px;background:#fffefa;color:#182b31;font-size:.75rem}.pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin:22px 0}.pagination button{border:1px solid #e1e6df;border-radius:8px;padding:8px 12px;background:#fffefa;color:#1b766d}.pagination button:disabled{opacity:.45;cursor:not-allowed}.pagination span,.empty-state{color:#6b797a;font-size:.78rem}</style>
+    <link rel="stylesheet" href="./css/main.css?v=2026.09.21.001"><style>.filters select{padding:11px 10px;border:1px solid #e1e6df;border-radius:9px;background:#fffefa;color:#182b31;font-size:.75rem}.pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin:22px 0}.pagination button{border:1px solid #e1e6df;border-radius:8px;padding:8px 12px;background:#fffefa;color:#1b766d}.pagination button:disabled{opacity:.45;cursor:not-allowed}.pagination span,.empty-state{color:#6b797a;font-size:.78rem}</style>
   </head>
-  <body><div class="shell"><aside><div class="brand"><b>∿</b><div><strong>Physics Lab</strong><small>Learning App V2</small></div></div><p class="nav-label">WORKSPACE</p><nav><button data-route="dashboard">◈ <span>Tổng quan</span></button><button data-route="question-bank">▤ <span>Question bank</span></button><button data-route="architecture">⌘ <span>Kiến trúc</span></button></nav><footer><strong>FOUNDATION · PHASE 1</strong><small>Local-first learning data</small></footer></aside><main><header><span>Physics Lab / <b>Learning workspace</b></span><span class="student"><i>HS</i> Học sinh</span></header><p id="system-status">Đang khởi tạo…</p><div id="app"></div></main></div><script type="module" src="./js/app.js?v=2026.09.20.001"></script></body>
+  <body><div class="shell"><aside><div class="brand"><b>∿</b><div><strong>Physics Lab</strong><small>Learning App V2</small></div></div><p class="nav-label">WORKSPACE</p><nav><button data-route="dashboard">◈ <span>Tổng quan</span></button><button data-route="question-bank">▤ <span>Question bank</span></button><button data-route="architecture">⌘ <span>Kiến trúc</span></button></nav><footer><strong>FOUNDATION · PHASE 1</strong><small>Local-first learning data</small></footer></aside><main><header><span>Physics Lab / <b>Learning workspace</b></span><span class="student"><i>HS</i> Học sinh</span></header><p id="system-status" class="system-status">Đang khởi tạo…</p><div id="app"></div></main></div><script>
+    (() => {
+      const STARTUP_TIMEOUT_MS = 15000;
+      const root = () => document.querySelector('#app');
+      const status = () => document.querySelector('#system-status');
+      const state = window.__startupState = { phase: 'boot', attempt: 0, startedAt: new Date().toISOString(), ready: false };
+      let timeout;
+      const safeError = (error) => error instanceof Error ? error : new Error(String(error ?? 'Unknown startup error'));
+      const diagnostic = (error) => JSON.stringify({ code: error.code ?? 'STARTUP_ERROR', phase: state.phase, attempt: state.attempt, baseUrl: new URL('./', document.baseURI).href, message: error.message, timestamp: new Date().toISOString() }, null, 2);
+      const showFailure = (error, phase = state.phase) => {
+        if (state.ready) return;
+        const failure = safeError(error);
+        state.phase = phase;
+        if (status()) { status().textContent = `Không thể khởi tạo ứng dụng tại phase ${phase}.`; status().dataset.status = 'error'; }
+        const container = root();
+        if (!container) return;
+        container.replaceChildren();
+        const section = document.createElement('section'); section.className = 'error';
+        const icon = document.createElement('b'); icon.textContent = '!';
+        const title = document.createElement('h1'); title.textContent = 'Ứng dụng chưa sẵn sàng';
+        const message = document.createElement('p'); message.textContent = failure.message;
+        const details = document.createElement('details');
+        const summary = document.createElement('summary'); summary.textContent = 'Chi tiết chẩn đoán';
+        const pre = document.createElement('pre'); pre.textContent = diagnostic(failure); details.append(summary, pre);
+        const retry = document.createElement('button'); retry.className = 'primary'; retry.type = 'button'; retry.dataset.retry = ''; retry.textContent = 'Thử lại'; retry.addEventListener('click', () => window.__retryStartup?.());
+        section.append(icon, title, message, details, retry); container.append(section);
+      };
+      window.__setStartupPhase = (phase, message) => { state.phase = phase; if (status() && message) status().textContent = message; };
+      window.__setStartupAttempt = (attempt) => { state.attempt = attempt; state.startedAt = new Date().toISOString(); state.ready = false; clearTimeout(timeout); timeout = setTimeout(() => showFailure(Object.assign(new Error(`Startup timeout sau ${STARTUP_TIMEOUT_MS} ms.`), { code: 'STARTUP_TIMEOUT' }), state.phase), STARTUP_TIMEOUT_MS); };
+      window.__markAppReady = () => { state.ready = true; clearTimeout(timeout); };
+      window.__showStartupFailure = showFailure;
+      window.__retryStartup = () => { if (typeof window.__appRetryHandler === 'function') window.__appRetryHandler(); else location.reload(); };
+      window.addEventListener('error', (event) => showFailure(event.error ?? new Error(event.message || 'Uncaught exception'), state.phase));
+      window.addEventListener('unhandledrejection', (event) => showFailure(event.reason ?? new Error('Unhandled promise rejection'), state.phase));
+      timeout = setTimeout(() => showFailure(Object.assign(new Error(`Startup timeout sau ${STARTUP_TIMEOUT_MS} ms.`), { code: 'STARTUP_TIMEOUT' }), state.phase), STARTUP_TIMEOUT_MS);
+    })();
+  </script><script type="module" src="./js/app.js?v=2026.09.21.001"></script></body>
 </html>

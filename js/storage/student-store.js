@@ -1,5 +1,5 @@
-import { get, put } from './database.js';
-import { nowIso } from '../core/schema.js';
+import { get, put } from './database.js?v=2026.09.21.001';
+import { nowIso } from '../core/schema.js?v=2026.09.21.001';
 
 export const LOCAL_STUDENT_ID = 'student-local-001';
 
@@ -10,4 +10,3 @@ export async function ensureLocalStudent() {
   await put('students', student);
   return student;
 }
-
